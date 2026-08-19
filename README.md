@@ -1,10 +1,10 @@
-# CS-1181-[SEM]26
-Class materials for CS-1181 in [SEM] 2026
+# CS-1181-FA26
+Class materials for CS-1181 in Fall 2026
 
 
 ## Table of Contents
 
-- [CS-1181-SEM26](#cs-1181-sp26)
+- [CS-1181-FA26](#cs-1181-fa26)
 - [Additional Resources](#additional-resources)
   - [Previous Semesters](#previous-semesters)
   - [Practice Problems](#practice-problems)
