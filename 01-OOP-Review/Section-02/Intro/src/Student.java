@@ -1,4 +1,4 @@
-public class Student {
+public class Student extends Object {
     // fields
     private String name;
     private double gpa;
