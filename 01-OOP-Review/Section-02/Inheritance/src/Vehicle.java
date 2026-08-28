@@ -11,4 +11,8 @@ public abstract class Vehicle {
     public String getName() {
         return name;
     }
+
+    public void foo(){
+        String h = "hello";
+    }
 }
