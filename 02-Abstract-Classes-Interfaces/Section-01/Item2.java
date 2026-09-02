@@ -1,15 +1,18 @@
-public class Item
+public abstract class Item2
 {
     private double price = 0.0;
     private int quantity = 0;
     private String name = "";
 
-    public Item (double price, int quantity, String name)
+
+    public Item2(double price, int quantity, String name)
     {
         setPrice(price);
         setQuantity(quantity);
         this.name = name;
     }
+
+    public abstract double getPriceWithTax();
 
     public double getPrice()
     {

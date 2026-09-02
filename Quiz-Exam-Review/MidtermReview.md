@@ -59,9 +59,9 @@ Topics include:
     ```java
         public class Container {
 
-            private ArrayList<Item> contents;
+            private ArrayList<Item2> contents;
 
-            public Container(ArrayList<Item> initial){
+            public Container(ArrayList<Item2> initial){
                 this.contents = initial;
             }
         }
@@ -75,11 +75,11 @@ Topics include:
     ```java
     public class Container {
 
-        private ArrayList<Item> contents;
+        private ArrayList<Item2> contents;
 
-        public Container(ArrayList<Item> initial){
-            for(Item i : initial){
-                this.contents.add(new Item(i));
+        public Container(ArrayList<Item2> initial){
+            for(Item2 i : initial){
+                this.contents.add(new Item2(i));
             }
         }
     }
