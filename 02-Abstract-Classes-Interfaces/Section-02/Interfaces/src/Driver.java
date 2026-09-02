@@ -47,5 +47,48 @@ public class Driver {
 
 
         ll.printEveryOther();
+
+
+        Media m = new Movie();
+        m.consume();
+
+        AudioBook ab = new AudioBook();
+        ab.borrow();
+        m.borrow();
+
+        System.out.println();
+        System.out.println();
+        System.out.println();
+
+
+        // vg.interact();
+        
+        VideoGames vg = new VideoGames();
+        rent(vg);
+        rent(new AudioBook());
+        
+    }
+
+    /**
+     * Rent something that is borrowable
+     * @param b the thing to borrow
+     * @return the time left on the rental
+     */
+    public static int rent(Borrowable b){
+        
+        if(b instanceof VideoGames){
+            VideoGames myGame = (VideoGames) b;
+
+            myGame.interact();
+        } else if(b instanceof AudioBook) {
+            System.out.println("B was an audiobook");
+        }
+        else {
+            b.borrow();
+        }
+
+        return 30;
+        
+
     }
 }
