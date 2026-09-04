@@ -1,4 +1,4 @@
-public abstract class Item2
+public abstract class Item2 implements Comparable<Item2>
 {
     private double price = 0.0;
     private int quantity = 0;
@@ -13,6 +13,23 @@ public abstract class Item2
     }
 
     public abstract double getPriceWithTax();
+
+    @Override
+    public int compareTo(Item2 otherItem)
+    {
+        if (this.price < otherItem.price)
+        {
+            return -1;
+        }
+        else if (this.price > otherItem.price)
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
+    }
 
     public double getPrice()
     {
