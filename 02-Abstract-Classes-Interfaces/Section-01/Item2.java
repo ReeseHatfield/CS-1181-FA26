@@ -27,7 +27,19 @@ public abstract class Item2 implements Comparable<Item2>
         }
         else
         {
-            return 0;
+            return this.name.compareTo(otherItem.name);
+//            if (this.name.compareTo(otherItem.name) > 0)
+//            {
+//                return 1;
+//            }
+//            else if (this.name.compareTo(otherItem.name) < 0)
+//            {
+//                return -1;
+//            }
+//            else
+//            {
+//                return 0;
+//            }
         }
     }
 

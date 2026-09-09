@@ -30,14 +30,22 @@ public class StoreExample
         Food foodItem = new Food(1.87, 234, "Candy", false, 180);
         System.out.println(foodItem);
 
+        Food foodItem2 = new Food(1.87, 45, "Banana", false, 90);
+
         ArrayList<Item2> shoppingCart = new ArrayList<>();
         shoppingCart.add(purchasedItem);
         shoppingCart.add(returnedItem);
         shoppingCart.add(foodItem);
+        shoppingCart.add(foodItem2);
 
         System.out.println(shoppingCart);
         Collections.sort(shoppingCart);
         System.out.println(shoppingCart);
+
+        Collections.sort(shoppingCart, new Item2Comparator());
+        System.out.println(shoppingCart);
+
+
 
         // Item2 returnedItem2 = purchasedItem.exchange(foodItem);
     }
