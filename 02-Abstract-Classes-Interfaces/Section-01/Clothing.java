@@ -1,7 +1,17 @@
+import java.util.Comparator;
+
 public class Clothing extends Item2 implements Exchangeable
 {
     private char size = 'M';
     private String color = "";
+
+    static class ClothingComparator implements Comparator<Clothing> {
+        @Override
+        public int compare(Clothing c1, Clothing c2)
+        {
+            return c1.color.compareTo(c2.color);
+        }
+    }
 
     public Clothing(double price, int quantity, String name, char size, String color)
     {

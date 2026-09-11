@@ -2,7 +2,6 @@ import java.util.Comparator;
 
 public class Item2Comparator implements Comparator<Item2>
 {
-
     @Override
     public int compare(Item2 o1, Item2 o2)
     {
