@@ -1,5 +1,5 @@
 # Midterm Review
-The midterm will be held on Friday, February 27th. The exam is 55 minutes. 
+The midterm will be held on [DATE]. The exam is 55 minutes. 
 The exam will be a paper exam, so a writing utensil is required. 
 The exam is individual and talking will not be tolerated. 
 On the day of your exam, please wait outside the classroom as I will be seating you for the midterm.
