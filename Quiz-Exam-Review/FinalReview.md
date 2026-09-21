@@ -1,6 +1,6 @@
 # Final Review
-The final will be held in the room posted on Pilot at the time designated in your Pilot Page. T
-he exam is two hours and will be a paper exam, so a writing utensil is required. 
+The final will be held in the room posted on Pilot at the time designated in your Pilot Page. 
+The exam is two hours and will be a paper exam, so a writing utensil is required. 
 The exam is individual and talking will not be tolerated. 
 On the day of your exam, please wait outside the classroom as we will be seating you for the final.
 

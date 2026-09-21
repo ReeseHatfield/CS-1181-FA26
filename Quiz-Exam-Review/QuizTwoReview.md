@@ -1,5 +1,5 @@
 # Quiz Two Review
-The second quiz will be held in the latter half of class, April 1st, 2026. You will have 30 minutes to take the quiz. The exam will be a paper exam, so a writing utensil is required. The exam is individual and talking will not be tolerated.
+The second quiz will be held in the latter half of class on [DATE]. You will have 30 minutes to take the quiz. The exam will be a paper exam, so a writing utensil is required. The exam is individual and talking will not be tolerated.
 
 ## GUI
 * Understand basics of animation (Timer, custom graphics, pixel coordinates, etc.)
