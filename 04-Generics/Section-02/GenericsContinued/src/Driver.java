@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class Driver {
     public static void main(String[] args) {
@@ -33,5 +34,47 @@ public class Driver {
         Collections.sort(newList);
 
         System.out.println(newList);
+
+        // int n = foo(4);
+
+        // List<? extends Number> wildList = new ArrayList<>();
+        List<? super Number> wildList = new ArrayList<>();
+        wildList.add(5);
+        wildList.add(1);
+        wildList.add(2);
+
+        Object o = wildList.get(1);
+
+        ArrayList<Box<?>> boxList = new ArrayList<>();
+
+        boxList.add(new Box<Integer>(4));
+        boxList.add(new Box<String>("hello"));
+
+
+        int[] arr = new int[5];
+        arr[0] = 7;
+        // arr[8] = 6;
+
+
+        int i = 6;
+        int j = 9;
+
+
+        ArrayList<String> strList = new ArrayList<>(5);
+        strList.add("hello");
+        strList.add("hello");
+        strList.add("hello");
+        strList.add("hello");
+        strList.add("hello");
+        strList.add("hello");
+
+        
+
+        
+    }
+
+    public static <G extends Number> G foo(G thing){
+
+        return thing;
     }
 }
