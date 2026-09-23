@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class GenericIntro
 {
@@ -15,34 +16,54 @@ public class GenericIntro
             //roster.get(i).toUpperCase();
         }
 
-        Randomizer<Integer> lotteryDraw = new Randomizer<>();
+        Randomizer<Number> lotteryDraw = new Randomizer<>();
 
         for (int i = 1; i <= 100; i++)
         {
             lotteryDraw.addItem(i);
         }
+        lotteryDraw.addItem(4.6);
 
         System.out.println(lotteryDraw.pickItem());
         System.out.println(lotteryDraw.pickItem());
         System.out.println(lotteryDraw.pickItem());
         System.out.println(lotteryDraw.pickItem());
         System.out.println(lotteryDraw.pickItem());
-        lotteryDraw.displayAllContents();
+        //lotteryDraw.displayAllContents();
 
 
-        Randomizer<Character> classRoster = new Randomizer<>();
+        ArrayList<Double> nums = new ArrayList<>(Arrays.asList(3.5, 213.5, 342.9, 31.7));
 
-        for (int i = 97; i < 123; i++)
+        lotteryDraw.addAll(nums);
+
+
+//        Randomizer<Character> classRoster = new Randomizer<>();
+//
+//        for (int i = 97; i < 123; i++)
+//        {
+//            Character letter = (char) i;
+//            classRoster.addItem(letter);
+//        }
+//
+//        System.out.println(classRoster.pickItemDestructive());
+//        System.out.println(classRoster.pickItemDestructive());
+//        System.out.println(classRoster.pickItemDestructive());
+//        System.out.println(classRoster.pickItemDestructive());
+//        System.out.println(classRoster.pickItemDestructive());
+//        classRoster.displayAllContents();
+
+        Integer[] integers = {1, 6, 2, 8, 2, 9};
+        GenericIntro.<Integer, Double>printArray(integers);
+    }
+
+
+    public static <T, E> void printArray(T[] arr)
+    {
+        System.out.print("{");
+        for (T item : arr)
         {
-            Character letter = (char) i;
-            classRoster.addItem(letter);
+            System.out.print(item + ", ");
         }
-
-        System.out.println(classRoster.pickItemDestructive());
-        System.out.println(classRoster.pickItemDestructive());
-        System.out.println(classRoster.pickItemDestructive());
-        System.out.println(classRoster.pickItemDestructive());
-        System.out.println(classRoster.pickItemDestructive());
-        classRoster.displayAllContents();
+        System.out.print("}\n");
     }
 }

@@ -1,6 +1,6 @@
 import java.util.*;
-
-public class Randomizer<E extends Comparable<E>> implements Comparable<Randomizer<E>>
+// & Comparable<E>
+public class Randomizer<E extends Number> implements Comparable<Randomizer<E>>
 {
     private ArrayList<E> contents = new ArrayList<>();
     private Random rng = new Random();
@@ -27,6 +27,11 @@ public class Randomizer<E extends Comparable<E>> implements Comparable<Randomize
         contents.add(item);
     }
 
+    public void addAll(ArrayList<? extends E> items)
+    {
+        contents.addAll(items);
+    }
+
     public E pickItem()
     {
         int randomIndex = rng.nextInt(contents.size());
@@ -39,11 +44,11 @@ public class Randomizer<E extends Comparable<E>> implements Comparable<Randomize
         return contents.remove(randomIndex);
     }
 
-    public void displayAllContents()
-    {
-        Collections.sort(contents);
-        System.out.println(contents);
-    }
+//    public void displayAllContents()
+//    {
+//        Collections.sort(contents);
+//        System.out.println(contents);
+//    }
 
     @Override
     public int compareTo(Randomizer<E> o)
