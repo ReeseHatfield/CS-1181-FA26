@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 
 public class GenericIntro
 {
@@ -65,5 +66,13 @@ public class GenericIntro
             System.out.print(item + ", ");
         }
         System.out.print("}\n");
+    }
+
+    public static <T> void removeValue(Collection<T> stuff, T value)
+    {
+        if (stuff.contains(value))
+        {
+            stuff.remove(value);
+        }
     }
 }
