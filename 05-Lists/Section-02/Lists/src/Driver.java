@@ -27,15 +27,15 @@ public class Driver {
         // declare a value that are going to change
         // we never used second, third, ...
         // only access the head to start
-        Node<String> cur = first;
-        while(cur != null){
+        // Node<String> cur = first;
+        // while(cur != null){
 
-            System.out.println(cur.data);
-            cur = cur.next;
-        }
+        //     System.out.println(cur.data);
+        //     cur = cur.next;
+        // }
 
 
-        System.out.println();
+        // System.out.println();
 
 
         MyLinkedList<String> myList = new MyLinkedList<>();
@@ -45,6 +45,22 @@ public class Driver {
         myList.add("is");
         myList.add("Reese");
         System.out.println(myList);
+
+        // System.out.println(myList.get(0));
+        // // System.out.println(myList.get(7));
+        // System.out.println(myList.get(4));
+
+
+        myList.insert("Alice", 6);
+        System.out.println(myList);
+
+
+
+        // ArrayList<String> l = new ArrayList<>();
+        // l.get(5);
+        // l.get(5);
+        // T[] = ..
+        // arr[index]
 
 
     }
