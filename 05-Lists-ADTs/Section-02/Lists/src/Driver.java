@@ -62,6 +62,21 @@ public class Driver {
         // T[] = ..
         // arr[index]
 
+        ArrayList<Integer> al = new ArrayList<>();
+        al.add(1);
+        al.add(1);
+        al.add(1);
+        al.add(1);
+        al.add(1);
+        al.add(1);
+        al.add(1);
+        al.add(1);
+
+        al.get(5); // time complexity for this get()
+        
+        // hardware indepenent
+        // Big O notations
+
 
     }
 

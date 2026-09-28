@@ -46,9 +46,17 @@ public class MyLinkedList<T> {
 
     }
 
+    // 3 -> 1 + 1 + N
+    // 500 -> 502
+    // 10000000 -> 10000002
+    // amount of lines actually ran
+    // proportional to the size of the list
+    // O(N)
     public T get(int index){
 
+        // 1
         Node<T> cur = this.head;
+        // worst case N times
         for(int i = 0; i < index; i++){
             if(cur.next != null){
                 cur = cur.next;
@@ -59,20 +67,26 @@ public class MyLinkedList<T> {
             }
         }
 
+        // 1
         return cur.data;
     }
 
+    // O(1)
+    // does not take time proportional to the size of the list
     public void prepend(T thingToAdd){
+
         Node<T> nodeToAdd = new Node<>(thingToAdd);
 
         // easy case
         if(this.head == null){
             this.head = nodeToAdd;
-            return;
+            
+        }
+        else {
+            nodeToAdd.next = this.head;
+            this.head = nodeToAdd;
         }
 
-        nodeToAdd.next = this.head;
-        this.head = nodeToAdd;
 
     }
 
