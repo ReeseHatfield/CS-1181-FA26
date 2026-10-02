@@ -110,4 +110,33 @@ public class CustomLinkedList<E>
 
         currentNode.setValue(value);
     }
+
+    public void insert(int index, E value)
+    {
+        if (index >= size() || index < 0)
+        {
+            throw new IndexOutOfBoundsException();
+        }
+
+        Node<E> currentNode = headNode;
+        Node<E> newNode = new Node<>(value);
+
+        if (index == 0)
+        {
+            newNode.setNext(currentNode);
+            headNode = newNode;
+        }
+        else
+        {
+
+            for (int i = 0; i < index - 1; i++)
+            {
+                currentNode = currentNode.getNext();
+            }
+
+            Node<E> tempNode = currentNode.getNext();
+            newNode.setNext(tempNode);
+            currentNode.setNext(newNode);
+        }
+    }
 }

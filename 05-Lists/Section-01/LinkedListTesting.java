@@ -12,6 +12,10 @@ public class LinkedListTesting
         names.replace(1, "bob");
         System.out.println(names.get(1));
         System.out.println(names);
+        names.insert(1, "Angela");
+        System.out.println(names);
+        names.insert(0, "Liam");
+        System.out.println(names);
         System.out.println(names.get(2));
     }
 }
