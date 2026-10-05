@@ -107,5 +107,15 @@ public class ADTPractice
         System.out.println(wordCount.values());
 
 
+        // if you try to store objects that don't implement comparable in a PriorityQueue,
+        // you will get a runtime ClassCastException
+        Queue<Node<String>> blah = new PriorityQueue<>();
+        blah.offer(new Node<>("bob"));
+        blah.offer(new Node<>("alice"));
+        blah.offer(new Node<>("charlie"));
+        while (!blah.isEmpty())
+        {
+            System.out.println(blah.poll());
+        }
     }
 }
