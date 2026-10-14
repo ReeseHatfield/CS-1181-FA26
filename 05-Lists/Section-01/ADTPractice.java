@@ -79,6 +79,7 @@ public class ADTPractice
         }
 
 
+        // both implementations of set are functionally identical
         Set<String> colors = new HashSet<>();
         Set<String> colors2 = new TreeSet<>();
 
@@ -93,6 +94,7 @@ public class ADTPractice
         System.out.println(colors);
 
 
+        // both implementations of map are functionally identical
         Map<String, Integer> wordCount = new HashMap<>();
         Map<String, Integer> wordCount2 = new TreeMap<>();
 
@@ -105,6 +107,8 @@ public class ADTPractice
         System.out.println(wordCount);
         System.out.println(wordCount.keySet());
         System.out.println(wordCount.values());
+
+        System.out.println(wordCount.get("quick"));
 
 
         // if you try to store objects that don't implement comparable in a PriorityQueue,
