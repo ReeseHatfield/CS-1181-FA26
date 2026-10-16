@@ -20,23 +20,49 @@ public class Driver {
 
         JPanel root = new JPanel();
 
-        JLabel myLabel = new JLabel("Hello world!");
+        JLabel myLabel = new JLabel("Enter your name:");
         // myLabel.setText("hello world");
         root.add(myLabel);
 
 
-        JLabel course = new JLabel();
-        course.setText("CS-1181"); 
-        root.add(course);
+        // JLabel course = new JLabel();
+        // course.setText("CS-1181"); 
+        // root.add(course);
 
         JTextArea inputBox = new JTextArea(2, 15);
         root.add(inputBox);
 
         JButton btn = new JButton();
-        btn.setText("My first button");
-        btn.setIcon(new ImageIcon("cookie.png"));
+        btn.setText("Greet");
+        // btn.setIcon(new ImageIcon("cookie.png"));
         // btn.setEnabled(false);
+
+        // btn.addActionListener(new ButtonAction());
+        btn.addActionListener(e -> {
+
+            // System.out.println("button action ran");
+            String name = inputBox.getText();
+            System.out.println("Hello, " + name);
+
+            JLabel nameLabel = new JLabel();
+            nameLabel.setText(name);
+            root.add(nameLabel);
+
+            root.repaint();
+            root.revalidate();
+
+            // System.out.println("Action event was: " + e);
+
+        
+        });
         root.add(btn);
+
+
+        CustomButton btn2 = new CustomButton();
+        root.add(btn2);
+
+        root.add(new CustomButton());
+        root.add(new CustomButton());
 
 
         myFrame.setContentPane(root);
