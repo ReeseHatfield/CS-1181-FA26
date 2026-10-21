@@ -9,7 +9,6 @@ import java.util.Stack;
 
 public class Driver {
     public static void main(String[] args) {
-        ChatBot cb = new ChatBot("RnJ.txt");
         Scanner keyboard = new Scanner(System.in);
 
         Stack<Queue<String>> adts = new Stack<>();
@@ -58,15 +57,20 @@ public class Driver {
 
 
 
-        while(true){
-            System.out.print(">>>");
-            String input = keyboard.nextLine();
+        // ChatBot cb = new ChatBot("RnJ.txt");
 
-            String response = cb.reply(input);
+        // while(true){
+        //     System.out.print(">>>");
+        //     String input = keyboard.nextLine();
 
-            delayPrint(response);
+        //     String response = cb.reply(input);
+
+        //     delayPrint(response);
             
-        }
+        // }
+    
+        FontAdjuster.adjustFontSize(20);
+        new ChatBotGUI();
     
         // keyboard.close();
     }
