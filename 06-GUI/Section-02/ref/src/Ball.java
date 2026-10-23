@@ -1,3 +1,4 @@
+import javax.imageio.ImageIO;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -6,6 +7,7 @@ import javax.swing.JComponent;
 import javax.swing.Timer;
 
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
@@ -18,7 +20,9 @@ public class Ball extends JComponent{
     private int parentHeight = 500;
 
 
+
     public Ball(){
+
 
     }
 
@@ -27,6 +31,11 @@ public class Ball extends JComponent{
         super.paintComponent(g);
 
         g.setColor(Color.CYAN);
+
+        g.drawString("DVD", this.xPos, this.yPos);
+
+        
+                
 
         g.fillOval(xPos, yPos, 200, 200);
     }
