@@ -24,9 +24,37 @@ public class Driver {
         //     e.printStackTrace();
         // }
 
-        for(int i = 0; i <= 3; i++){
-            System.out.println(i);
+    //     for(int i = 0; i <= 3; i++){
+    //         System.out.println(i);
+    //     }
+
+        // System.out.println(countOccurrences('l', "Hello"));
+        // System.out.println(countOccurrences('o', "Hello"));
+        // System.out.println(countOccurrences('H', "Hello"));
+        // System.out.println(countOccurrences('j', "Hello"));
+
+        
+        System.out.println(OccuranceCounter.countOccurrences('l', "Hello"));
+        System.out.println(OccuranceCounter.countOccurrences('o', "Hello"));
+        System.out.println(OccuranceCounter.countOccurrences('H', "Hello"));
+        System.out.println(OccuranceCounter.countOccurrences('j', "Hello"));
+
+        System.out.println();
+        System.out.println();
+        
+        
+        // for(int i = 0; i < 50; i ++){
+        //     System.out.println(fibonacci(i));
+        // }
+    }
+
+    public static int fibonacci(int n){
+
+        if(n == 0 || n == 1){
+            return 1;
         }
+
+        return fibonacci(n - 1) + fibonacci(n - 2);
     }
 
     public static void doThing(int timesRan){
@@ -45,7 +73,51 @@ public class Driver {
         // recursive step
         System.out.println(timesRan);
         doThing(timesRan + 1);
+
     }
+
+    // public static int countOccurrences(char target, String s){
+    //     if(s.equals("")){
+    //         return 0;
+    //     }
+
+
+    //     int numCharactersFoundThisFrame = 0;
+
+    //     char first = s.charAt(0);
+    //     if(first == target) {
+    //         numCharactersFoundThisFrame = 1;
+    //     } else {
+    //         numCharactersFoundThisFrame = 0;
+    //     }
+
+        
+    //     return numCharactersFoundThisFrame 
+    //         + countOccurrences(target, s.substring(1));
+    // }
+
+    // public static int countOccurrences(char target, String s){
+    //     if(s.equals("")){
+    //         return 0;
+    //     }
+
+
+
+    //     char first = s.charAt(0);
+    //     if(first == target) {
+    //         // 1
+    //         return 1 + countOccurrences(target, s.substring(1));
+    //     } else {
+    //         // 0
+    //         return countOccurrences(target, s.substring(1));
+    //     }
+
+        
+    //     // return numCharactersFoundThisFrame 
+    //     //     + countOccurrences(target, s.substring(1));
+    // }
+
+
 
     public static void foo(int a){
         // int a = dynamic (4)
