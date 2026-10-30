@@ -9,6 +9,9 @@ public class OccuranceCounter {
         // System.out.println(foundSoFar);
         // System.out.println();
 
+
+        int a = 5;
+
         if(s.equals("")){
             // return 0;
             return foundSoFar;
