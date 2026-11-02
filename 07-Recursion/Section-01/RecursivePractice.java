@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Random;
 
 public class RecursivePractice
@@ -20,6 +21,11 @@ public class RecursivePractice
         System.out.println(scrambleWord(""));
         System.out.println(scrambleWord("h"));
         System.out.println(scrambleWord("abcdefghijklmnopqrstuvwxyz"));
+
+        System.out.println(permute(""));
+        System.out.println(permute("ab"));
+        System.out.println(permute("cat"));
+        System.out.println(permute("four"));
     }
 
     public static String scrambleWord(String word)
@@ -73,5 +79,35 @@ public class RecursivePractice
 //            String reversedShorterWord = reverseWord(shorterWord);
 //            return lastCharacter + reversedShorterWord;
 //        }
+    }
+
+
+    public static ArrayList<String> permute(String word)
+    {
+        ArrayList<String> permuteList = new ArrayList<>();
+
+        // edge case check
+        if (word.isEmpty())
+        {
+            return permuteList;
+        }
+        // base case
+        else if (word.length() == 1)
+        {
+            permuteList.add(word);
+            return permuteList;
+        }
+
+        for (int i = 0; i < word.length(); i++)
+        {
+            char letter = word.charAt(i);
+            String remainingWord = word.substring(0, i) + word.substring(i + 1);
+            ArrayList<String> result = permute(remainingWord);
+            for (String permutation : result)
+            {
+                permuteList.add(letter + permutation);
+            }
+        }
+        return permuteList;
     }
 }
