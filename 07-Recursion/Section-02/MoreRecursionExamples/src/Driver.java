@@ -12,8 +12,37 @@ public class Driver {
         System.out.println(endX("xx_java_dev__xx"));
         System.out.println(endX("hellxxxoooo"));
 
-        printTriangleAlt(5);
-        printTriangleAlt(15);
+        // printTriangleAlt(5);
+        // printTriangleAlt(15);
+
+        // printInvertedTriangle(15, 1);
+
+        System.out.println();
+        System.out.println("IsPalindrome Testing:");
+        System.out.println(isPalindrome("racecar"));
+        System.out.println(isPalindrome("kayak"));
+        System.out.println(isPalindrome("hello"));
+        System.out.println(isPalindrome("heeh"));
+        System.out.println(isPalindrome("heujueh"));
+
+    }
+
+    public static boolean isPalindrome(String input){
+        if(input.length() <= 1){
+            return true;
+        }
+
+        char first = input.charAt(0);
+        char last  = input.charAt(input.length() - 1);
+
+        if(first != last){
+            return false;
+        }
+
+        String remaining = input.substring(1, input.length() - 1);
+
+        return isPalindrome(remaining);
+
     }
 
 
@@ -43,6 +72,43 @@ public class Driver {
         System.out.println();
 
         printTriangleAlt(height - 1);
+    }
+
+    public static void printInvertedTriangle(int targetHeight, int curHeight){
+        if(curHeight == targetHeight + 1){
+            return;
+        }
+
+        for(int i = 0; i < curHeight; i++){
+            System.out.print("* ");
+        }
+        System.out.println();
+
+
+        printInvertedTriangle(targetHeight, curHeight + 1);
+
+    }
+
+    public static void printRow(int lengthRemaining){
+        if(lengthRemaining == 0){
+            System.out.println();
+            return;
+        }
+
+
+        System.out.print("* ");
+        printRow(lengthRemaining - 1);
+    }
+
+    public static void printInvertedTriangleAlt(int targetHeight, int curHeight){
+        if(curHeight == targetHeight + 1){
+            return;
+        }
+
+        printRow(curHeight);
+
+        printInvertedTriangle(targetHeight, curHeight + 1);
+
     }
 
 

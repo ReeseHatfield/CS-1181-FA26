@@ -46,6 +46,25 @@ public class MyLinkedList<T> {
 
     }
 
+    public void insertRec(T valueToAdd, int index){
+        insertRec(valueToAdd, index, 0, this.head);
+    }
+
+
+    private void insertRec(T valueToAdd, int index, int curIndex, Node<T> cur){
+
+        if(curIndex == index - 1){
+            Node<T> nodeToAdd = new Node<>(valueToAdd);
+
+            nodeToAdd.next = cur.next;
+            cur.next = nodeToAdd;
+            return;
+        }
+
+
+        insertRec(valueToAdd, index, curIndex + 1, cur.next);
+    }
+
     // 3 -> 1 + 1 + N
     // 500 -> 502
     // 10000000 -> 10000002
