@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.Random;
+import java.util.*;
 
 public class RecursivePractice
 {
@@ -26,6 +25,9 @@ public class RecursivePractice
         System.out.println(permute("ab"));
         System.out.println(permute("cat"));
         System.out.println(permute("four"));
+
+        ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(4, 6, 2, 8, 3, 4, 5, 1, 2, 9, 8, 5, 6, 3, 1, 8, 9, 9, 4, 3, 6, 7, 2, 4));
+        Collections.sort(numbers);
     }
 
     public static String scrambleWord(String word)
@@ -109,5 +111,33 @@ public class RecursivePractice
             }
         }
         return permuteList;
+    }
+
+    public static <V extends Comparable<V>> int binarySearch(List<V> list, V value)
+    {
+        // base case
+        if (list.isEmpty())
+        {
+            return -1;
+        }
+
+        // recursive step
+        int midIndex = list.size() / 2;
+
+        if (value.compareTo(list.get(midIndex)) > 0)
+        {
+            list = list.subList(midIndex + 1, list.size());
+            int index = binarySearch(list, value);
+            if (index == -1)
+            {
+                return index;
+            }
+            else
+            {
+                return index + midIndex;
+            }
+        }
+        // DELETE LATER
+        return 0;
     }
 }
