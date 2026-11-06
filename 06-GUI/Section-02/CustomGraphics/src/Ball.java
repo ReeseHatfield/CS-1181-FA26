@@ -3,6 +3,7 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.io.File;
 
 public class Ball extends JComponent {
@@ -30,8 +31,14 @@ public class Ball extends JComponent {
     private int deltaX = 3;
     private int deltaY = 3;
 
+
     public void animate(){
 
+
+
+    // e -> {
+    // ...
+    // } 
 
         Timer t = new Timer(10, e -> {
             x += deltaX;
