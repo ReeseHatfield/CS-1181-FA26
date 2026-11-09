@@ -26,8 +26,15 @@ public class RecursivePractice
         System.out.println(permute("cat"));
         System.out.println(permute("four"));
 
-        ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(4, 6, 2, 8, 3, 4, 5, 1, 2, 9, 8, 5, 6, 3, 1, 8, 9, 9, 4, 3, 6, 7, 2, 4));
+        ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(4, 6, 2, 8, 3, 4, 5, 1, 12, 78, 23, 12, 14, 56));
         Collections.sort(numbers);
+        System.out.println(numbers);
+        System.out.println(binarySearch(numbers, 2));
+        System.out.println(binarySearch(numbers, -2));
+        System.out.println(binarySearch(numbers, 56));
+        System.out.println(binarySearch(numbers, 1));
+        System.out.println(binarySearch(numbers, 78));
+        System.out.println(binarySearch(numbers, 8));
     }
 
     public static String scrambleWord(String word)
@@ -134,10 +141,17 @@ public class RecursivePractice
             }
             else
             {
-                return index + midIndex;
+                return index + midIndex + 1;
             }
         }
-        // DELETE LATER
-        return 0;
+        else if (value.compareTo(list.get(midIndex)) < 0)
+        {
+            list = list.subList(0, midIndex);
+            return binarySearch(list, value);
+        }
+        else
+        {
+            return midIndex;
+        }
     }
 }
