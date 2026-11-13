@@ -14,6 +14,9 @@ public class Driver {
             list.add(i);
         }
 
+
+        // System.out.println(list.get(9));
+
         // System.out.println(list);
 
         // todo bug TAs about game jam
