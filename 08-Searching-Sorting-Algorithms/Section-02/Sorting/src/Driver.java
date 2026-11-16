@@ -11,21 +11,31 @@ public class Driver {
 
         // Random r = new Random()
 
-        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(
-            2, 6, 5, 3, 8, 7, 1, 0
-        ));
+        // List<Integer> list = new ArrayList<>(Arrays.asList(
+        //     2, 6, 5, 3, 8, 7, 1, 0
+        // ));
 
-        System.out.println("Unsorted: " + list);
+
+        System.out.println("Starting merge sort");
+        List<Integer> list2 = createRandom();
+        list2 = mergeSort(list2);
+        System.out.println("merge Sort completed ");
+
+
+        List<Integer> list = createRandom();
+
+        // System.out.println("Unsorted: " + list);
+        System.out.println("Starting bubble sort");
         list = bubbleSort(list);
-        System.out.println("Sorted: " + list);
-
-
+        System.out.println("Bubble Sorted: completed");
+        
 
 
     }
 
-    public static ArrayList<Integer> bubbleSort(ArrayList<Integer> list){
-        ArrayList<Integer> copy = new ArrayList<>(list);
+    // O(n ^ 2)
+    public static List<Integer> bubbleSort(List<Integer> list){
+        List<Integer> copy = new ArrayList<>(list);
 
 
 
@@ -40,16 +50,46 @@ public class Driver {
                 }
             }
 
-            System.out.println("Intermediary list: " + copy);
+            // System.out.println("Intermediary list: " + copy);
         }
 
         return copy;
     }
 
+    public static ArrayList<Integer> createRandom(){
+
+        ArrayList<Integer> list = new ArrayList<>(100_000);
+
+        Random rng = new Random();
+        for(int i = 0; i < 100_000; i++){
+            list.add(rng.nextInt(0, 100));
+        }
+
+        return list;
+
+    }
 
 
 
 
+    // O(n * logn)
+    public static List<Integer> mergeSort(List<Integer> sortMe){
+
+        if(sortMe.size() == 1){
+            return sortMe;
+        }
+
+        int mid = sortMe.size() / 2;
+
+        List<Integer> left = new ArrayList<>(sortMe.subList(0, mid));
+        List<Integer> right = new ArrayList<>(sortMe.subList(mid, sortMe.size()));
+    
+        left = mergeSort(left);
+        right = mergeSort(right);
+
+        return merge(left, right);
+
+    }
 
 
 
