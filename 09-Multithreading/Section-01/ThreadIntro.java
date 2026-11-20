@@ -8,16 +8,19 @@ public class ThreadIntro
     // 3 threads took 12047ms
     // 4 threads took 9386ms
     // 8 threads took 5345
-    public static final int NUM_THREADS = 100;
+    // 16 threads took 5170
+    public static final int NUM_THREADS = 16;
 
     public static void main(String[] args) throws InterruptedException
     {
-        ArrayList<Integer> searchSpace = new ArrayList<>();
+        MyList<Integer> searchSpace = new MyList<>();
         Random rng = new Random(5);
         for (int i = 0; i < 9999999; i++)
         {
             searchSpace.add(rng.nextInt(100000000));
         }
+        Thread dumbThread = new Thread(searchSpace);
+        dumbThread.start();
         System.out.println("List created!");
 
         long startTime = System.currentTimeMillis();

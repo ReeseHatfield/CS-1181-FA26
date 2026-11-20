@@ -21,7 +21,7 @@ public class PerfectSquareThread extends Thread
         {
             if (isPerfectSquare(num))
             {
-                System.out.println(num);
+                System.out.println("PERFECT SQUARE: " + num);
             }
         }
     }
