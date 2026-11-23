@@ -10,6 +10,7 @@ public class ThreadIntro
     // 8 threads took 5345
     // 16 threads took 5170
     public static final int NUM_THREADS = 16;
+    public static volatile ArrayList<Integer> perfectSquares = new ArrayList<>();
 
     public static void main(String[] args) throws InterruptedException
     {
@@ -19,8 +20,8 @@ public class ThreadIntro
         {
             searchSpace.add(rng.nextInt(100000000));
         }
-        Thread dumbThread = new Thread(searchSpace);
-        dumbThread.start();
+        //Thread dumbThread = new Thread(searchSpace);
+        //dumbThread.start();
         System.out.println("List created!");
 
         long startTime = System.currentTimeMillis();
@@ -52,6 +53,11 @@ public class ThreadIntro
         long end = System.currentTimeMillis();
 
         System.out.println("TOTAL TIME: " + (end - startTime));
+
+        System.out.println(perfectSquares);
+        System.out.println(perfectSquares.size());
+//        System.out.println(PerfectSquareThread.getPerfectSquares());
+//        System.out.println(PerfectSquareThread.getPerfectSquares().size());
 
 //        for (int i = 0; i < 100000; i++)
 //        {
