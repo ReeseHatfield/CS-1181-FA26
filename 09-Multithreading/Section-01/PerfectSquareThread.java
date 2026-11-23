@@ -6,8 +6,7 @@ public class PerfectSquareThread extends Thread
     private int start = 0;
     private int end = 0;
     private List<Integer> threadSearchSpace = new ArrayList<>();
-
-
+    private static ArrayList<Integer> perfectSquares = new ArrayList<>();
 
     public PerfectSquareThread(int newStart, int newEnd, ArrayList<Integer> entireSearchSpace)
     {
@@ -29,9 +28,9 @@ public class PerfectSquareThread extends Thread
         }
     }
 
-    public synchronized void addPerfectSquare(int newPerfectSquare)
+    public static synchronized void addPerfectSquare(int newPerfectSquare)
     {
-        ThreadIntro.perfectSquares.add(newPerfectSquare);
+        perfectSquares.add(newPerfectSquare);
     }
 
     public boolean isPerfectSquare(int num)
@@ -47,9 +46,9 @@ public class PerfectSquareThread extends Thread
         return perfectSquare == num;
     }
 
-//    public static ArrayList<Integer> getPerfectSquares()
-//    {
-//        return ThreadIntro.perfectSquares;
-//    }
-
+    public static void printPerfectSquares()
+    {
+        System.out.println(perfectSquares.size() + " perfect squares found");
+        System.out.println(perfectSquares);
+    }
 }
